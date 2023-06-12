@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{metal_type}-{date}",
+ "creation": "2023-06-08 15:52:17.650479",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "column_break_lkyed",
+  "metal_type",
+  "section_break_kqezx",
+  "rate",
+  "value_edition",
+  "column_break_ujnql",
+  "number_of_range",
+  "value_range",
+  "section_break_aypkl",
+  "range",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_ujnql",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_of_range",
+   "fieldtype": "Int",
+   "label": "Number Of Range"
+  },
+  {
+   "fieldname": "value_range",
+   "fieldtype": "Int",
+   "label": "Value Range"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "MRP Preset",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_aypkl",
+   "fieldtype": "Section Break",
+   "label": "Range"
+  },
+  {
+   "fieldname": "range",
+   "fieldtype": "Table",
+   "options": "Range"
+  },
+  {
+   "default": "Gold",
+   "fieldname": "metal_type",
+   "fieldtype": "Link",
+   "label": "Metal Type",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Data",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "section_break_kqezx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_lkyed",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "value_edition",
+   "fieldtype": "Data",
+   "label": "Value Edition"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-06-10 16:08:40.805411",
+ "modified_by": "Administrator",
+ "module": "Mrp",
+ "name": "MRP Preset",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

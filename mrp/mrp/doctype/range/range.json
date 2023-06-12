@@ -1,0 +1,38 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-08 15:55:01.727350",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "range",
+  "value_addition"
+ ],
+ "fields": [
+  {
+   "fieldname": "range",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Range"
+  },
+  {
+   "fieldname": "value_addition",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Value Addition"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-09 11:36:15.638090",
+ "modified_by": "Administrator",
+ "module": "Mrp",
+ "name": "Range",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

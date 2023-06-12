@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-03 15:13:29.583094",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "carat",
+  "gold_purity",
+  "dollor",
+  "rupee"
+ ],
+ "fields": [
+  {
+   "fieldname": "gold_purity",
+   "fieldtype": "Data",
+   "label": "Metal Purity",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "carat",
+   "fieldtype": "Link",
+   "label": "Metal Touch",
+   "options": "Attribute Value"
+  },
+  {
+   "description": "Price in USD for Purity Per / Gram ",
+   "fieldname": "dollor",
+   "fieldtype": "Data",
+   "label": "$"
+  },
+  {
+   "fieldname": "rupee",
+   "fieldtype": "Data",
+   "label": "\u20b9"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-08 12:30:19.233296",
+ "modified_by": "Administrator",
+ "module": "Mrp",
+ "name": "GOLD MRP PRICE DETAILS",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
