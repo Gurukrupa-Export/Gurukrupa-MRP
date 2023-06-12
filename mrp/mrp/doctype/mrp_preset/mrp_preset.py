@@ -1,8 +1,8 @@
 # Copyright (c) 2023, vishal@gurukrupaexport.in and contributors
 # For license information, please see license.txt
 
-# import frappe,math
-# from frappe.model.document import Document
+import frappe,math
+from frappe.model.document import Document
 # import requests
 # import cloudscraper
 # import json
@@ -10,7 +10,7 @@
 # from dateutil.relativedelta import relativedelta
 # import calendar
 # import pandas as pd
-from currency_converter import CurrencyConverter
+# from currency_converter import CurrencyConverter
 
 class MRPPreset(Document):
 	pass
