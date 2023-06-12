@@ -4,13 +4,13 @@
 import frappe
 from frappe.model.document import Document
 import requests
-import cloudscraper
-import json
-from datetime import datetime,timedelta
-from dateutil.relativedelta import relativedelta
-import calendar
-import pandas as pd
-from currency_converter import CurrencyConverter
+# import cloudscraper
+# import json
+# from datetime import datetime,timedelta
+# from dateutil.relativedelta import relativedelta
+# import calendar
+# import pandas as pd
+# from currency_converter import CurrencyConverter
 
 
 
