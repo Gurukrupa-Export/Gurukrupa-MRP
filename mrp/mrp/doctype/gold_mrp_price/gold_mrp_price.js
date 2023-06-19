@@ -24,5 +24,18 @@ frappe.ui.form.on('GOLD MRP PRICE', {
 				}
 			}
 		});
+		var parent_fields = [["metal_touch","Metal Touch"]];
+        set_item_attribute_filters_on_fields_in_parent_doctype(frm, parent_fields);
 	}
 });
+
+function set_item_attribute_filters_on_fields_in_parent_doctype(frm, fields) {
+  fields.map(function(field){
+    frm.set_query(field[0], function() {
+      return {
+        query: 'jewellery_erpnext.query.item_attribute_query',
+        filters: {'item_attribute': field[1]}
+      }
+    })
+  })
+}

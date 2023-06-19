@@ -1,8 +1,8 @@
-frappe.ui.form.on('MRP Preset', {
+frappe.ui.form.on('Sliver MRP preset', {
 	onload(frm) {
 
 		frappe.call({
-			method: 'mrp.mrp.doctype.mrp_preset.mrp_preset.get_gold_price',
+			method: 'mrp.mrp.doctype.sliver_mrp_preset.sliver_mrp_preset.get_silver_price',
 			callback: function(r) {
 				if (!r.exc) {
 					cur_frm.set_value('standard_rate', r.message[0]);
@@ -23,7 +23,7 @@ frappe.ui.form.on('MRP Preset', {
 	value_range(frm) {
 		cur_frm.clear_table('range');
 		frappe.call({
-			method: 'mrp.mrp.doctype.mrp_preset.mrp_preset.final',
+			method: 'mrp.mrp.doctype.sliver_mrp_preset.sliver_mrp_preset.final',
 			args: {
 				'standard_rate': cur_frm.doc.standard_rate,
 				'value_range': cur_frm.doc.value_range,

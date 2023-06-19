@@ -15,12 +15,14 @@
   {
    "fieldname": "gold_purity",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Metal Purity",
    "options": "Attribute Value"
   },
   {
    "fieldname": "carat",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Metal Touch",
    "options": "Attribute Value"
   },
@@ -28,18 +30,20 @@
    "description": "Price in USD for Purity Per / Gram ",
    "fieldname": "dollor",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "$"
   },
   {
    "fieldname": "rupee",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "\u20b9"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-08 12:30:19.233296",
+ "modified": "2023-06-12 16:22:58.818391",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "GOLD MRP PRICE DETAILS",

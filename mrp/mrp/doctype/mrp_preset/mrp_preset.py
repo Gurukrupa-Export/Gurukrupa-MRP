@@ -3,14 +3,14 @@
 
 import frappe,math
 from frappe.model.document import Document
-# import requests
-# import cloudscraper
-# import json
-# from datetime import datetime,timedelta
-# from dateutil.relativedelta import relativedelta
-# import calendar
-# import pandas as pd
-# from currency_converter import CurrencyConverter
+import requests
+import cloudscraper
+import json
+from datetime import datetime,timedelta
+from dateutil.relativedelta import relativedelta
+import calendar
+import pandas as pd
+from currency_converter import CurrencyConverter
 
 class MRPPreset(Document):
 	pass
@@ -78,13 +78,13 @@ def get_gold_price():
 	df.loc[span:, 'EMA'] = df.loc[span - 1, 'SMA'] + (df.loc[span:, 'last_close'] - df.loc[span - 1, 'SMA']) * multiplier
 	df['EMA'].ffill(inplace=True)
 	df2= df[['date','last_close','EMA']]
-	# latest_ema_rate = df2.loc[0]['EMA']
-	rate_in_ounce = round(df2.loc[0]['EMA']+100,2)
+	latest_ema_rate = df2.loc[0]['EMA']
+	rate_in_ounce = round(df2.loc[0]['EMA'],2)
 	# rate_in_gram = rate_in_ounce/31.10348
 	
 
 	current_datetime = str(end_date).split('.')[0]
-	return round(raw_rate),rate_in_ounce,current_datetime
+	return round(raw_rate),latest_ema_rate,current_datetime
 
 
 # @frappe.whitelist()
@@ -97,10 +97,10 @@ def get_gold_price():
 
 
 @frappe.whitelist()
-def final(number_of_range,value_range,gold_rate):
+def final(number_of_range,value_range,standard_rate):
     number_of_range = int(number_of_range)
     value_range = int(value_range)
-    gold_rate = int(gold_rate)
+    gold_rate = int(standard_rate)
     def plus(number_of_range,value_range,gold_rate):
         plus_parts = []
 
