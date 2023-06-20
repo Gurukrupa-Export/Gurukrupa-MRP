@@ -6,27 +6,27 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "range",
+  "value_range",
   "value_addition"
  ],
  "fields": [
-  {
-   "fieldname": "range",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Range"
-  },
   {
    "fieldname": "value_addition",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Value Addition"
+  },
+  {
+   "fieldname": "value_range",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Range"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-09 11:36:15.638090",
+ "modified": "2023-06-20 12:36:14.834718",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "Range",

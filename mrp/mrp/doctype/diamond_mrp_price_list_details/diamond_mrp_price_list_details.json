@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-20 10:49:20.814638",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "price_list_type",
+  "sieve_size_range",
+  "purchase_rate",
+  "margin",
+  "column_break_vughr",
+  "rate",
+  "currency"
+ ],
+ "fields": [
+  {
+   "fieldname": "purchase_rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Purchase Rate"
+  },
+  {
+   "depends_on": "eval:doc.price_list_type=='Sieve Size Range'",
+   "fieldname": "sieve_size_range",
+   "fieldtype": "Link",
+   "label": "Sieve Size Range",
+   "mandatory_depends_on": "eval:(doc.price_list_type) =='Sieve Size Range'",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "margin",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Margin"
+  },
+  {
+   "fieldname": "column_break_vughr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "price_list_type",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Price List Type",
+   "options": "\nSieve Size Range\nWeight (in cts)\nSize (in mm)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-20 14:51:36.593106",
+ "modified_by": "Administrator",
+ "module": "Mrp",
+ "name": "Diamond MRP Price List Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

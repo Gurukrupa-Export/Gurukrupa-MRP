@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestDIAMONDMRPPRICE(FrappeTestCase):
+class TestPlatinumMRPpreset(FrappeTestCase):
 	pass

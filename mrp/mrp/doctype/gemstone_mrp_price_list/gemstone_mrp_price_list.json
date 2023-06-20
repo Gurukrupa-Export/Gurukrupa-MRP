@@ -1,0 +1,164 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:SP-{#####}",
+ "creation": "2023-06-20 12:13:31.332722",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "customer",
+  "price_list",
+  "effective_from",
+  "column_break_b8dcq",
+  "brand",
+  "price_list_type",
+  "currency",
+  "section_break_vhjux",
+  "stone_code",
+  "stone_type",
+  "stone_quality",
+  "column_break_vwjvj",
+  "stone_shape",
+  "cut_or_cab",
+  "stone_size",
+  "section_break_xbeml",
+  "gemstone_mrp_price_list_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Price List",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Datetime",
+   "label": "Effective From"
+  },
+  {
+   "fieldname": "column_break_b8dcq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "label": "Brand",
+   "options": "Brand"
+  },
+  {
+   "fieldname": "price_list_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Price List Type",
+   "options": "Weight (in cts)\nFixed"
+  },
+  {
+   "fetch_from": "company.default_currency",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "section_break_vhjux",
+   "fieldtype": "Section Break",
+   "label": "Gemstone Details"
+  },
+  {
+   "fieldname": "stone_code",
+   "fieldtype": "Data",
+   "label": "Stone Code"
+  },
+  {
+   "fieldname": "stone_type",
+   "fieldtype": "Link",
+   "label": "Stone Type",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "column_break_vwjvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stone_shape",
+   "fieldtype": "Link",
+   "label": "Stone Shape",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "stone_quality",
+   "fieldtype": "Link",
+   "label": "Stone Quality",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "cut_or_cab",
+   "fieldtype": "Link",
+   "label": "Cut or Cab",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "stone_size",
+   "fieldtype": "Link",
+   "label": "Stone Size",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "section_break_xbeml",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gemstone_mrp_price_list_details",
+   "fieldtype": "Table",
+   "label": "Gemstone MRP Price List Details",
+   "options": "Gemstone MRP Price List Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-20 15:03:45.843340",
+ "modified_by": "Administrator",
+ "module": "Mrp",
+ "name": "Gemstone MRP Price List",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-20 12:29:11.122985",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "from_weight",
+  "to_weight",
+  "item",
+  "bom",
+  "rate",
+  "handling_rate",
+  "currency"
+ ],
+ "fields": [
+  {
+   "depends_on": "eval:doc.price_list_type=='Weight (in cts)'",
+   "fieldname": "from_weight",
+   "fieldtype": "Float",
+   "label": "From Weight (in cts)"
+  },
+  {
+   "depends_on": "eval:doc.price_list_type=='Weight (in cts)'",
+   "fieldname": "to_weight",
+   "fieldtype": "Float",
+   "label": "To Weight (in cts)"
+  },
+  {
+   "depends_on": "eval:doc.price_list_type=='Fixed'",
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "depends_on": "eval:doc.price_list_type=='Fixed'",
+   "fieldname": "bom",
+   "fieldtype": "Link",
+   "label": "BOM",
+   "options": "BOM"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "handling_rate",
+   "fieldtype": "Float",
+   "label": "Gemstone Handling Rate"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-20 12:29:11.122985",
+ "modified_by": "Administrator",
+ "module": "Mrp",
+ "name": "Gemstone MRP Price List Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

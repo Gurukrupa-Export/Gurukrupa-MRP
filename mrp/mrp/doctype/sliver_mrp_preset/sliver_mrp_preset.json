@@ -1,8 +1,8 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{metal_type}-{Preset}-{date}",
- "creation": "2023-06-08 15:52:17.650479",
+ "autoname": "format:{metal_type}-{date}",
+ "creation": "2023-06-17 15:34:32.971723",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -28,40 +28,7 @@
    "label": "Date"
   },
   {
-   "fieldname": "column_break_ujnql",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "number_of_range",
-   "fieldtype": "Int",
-   "label": "Number Of Range"
-  },
-  {
-   "fieldname": "value_range",
-   "fieldtype": "Int",
-   "label": "Value Range"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "MRP Preset",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_aypkl",
-   "fieldtype": "Section Break",
-   "label": "Range"
-  },
-  {
-   "fieldname": "range",
-   "fieldtype": "Table",
-   "options": "Range"
-  },
-  {
-   "default": "Gold",
+   "default": "Silver",
    "fieldname": "metal_type",
    "fieldtype": "Link",
    "label": "Metal Type",
@@ -80,21 +47,54 @@
   {
    "fieldname": "ema_rate",
    "fieldtype": "Data",
-   "label": "EMA Rate"
+   "label": "Ema Rate"
   },
   {
    "fieldname": "value_addition",
    "fieldtype": "Data",
    "label": "Value Addition"
+  },
+  {
+   "fieldname": "column_break_ujnql",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_of_range",
+   "fieldtype": "Int",
+   "label": "Number Of Range"
+  },
+  {
+   "fieldname": "value_range",
+   "fieldtype": "Int",
+   "label": "Value Range"
+  },
+  {
+   "fieldname": "section_break_aypkl",
+   "fieldtype": "Section Break",
+   "label": "Range"
+  },
+  {
+   "fieldname": "range",
+   "fieldtype": "Table",
+   "options": "Range"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sliver MRP preset",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-20 12:41:25.558542",
+ "modified": "2023-06-17 17:21:45.626834",
  "modified_by": "Administrator",
  "module": "Mrp",
- "name": "MRP Preset",
+ "name": "Sliver MRP preset",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

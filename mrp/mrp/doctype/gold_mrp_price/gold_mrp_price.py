@@ -4,13 +4,13 @@
 import frappe
 from frappe.model.document import Document
 import requests
-# import cloudscraper
-# import json
-# from datetime import datetime,timedelta
-# from dateutil.relativedelta import relativedelta
-# import calendar
-# import pandas as pd
-# from currency_converter import CurrencyConverter
+import cloudscraper
+import json
+from datetime import datetime,timedelta
+from dateutil.relativedelta import relativedelta
+import calendar
+import pandas as pd
+from currency_converter import CurrencyConverter
 
 
 
@@ -83,9 +83,9 @@ def get_gold_price():
 	# latest_ema_rate = df2.loc[0]['EMA']
 	rate_in_ounce = round(df2.loc[0]['EMA']+100,2)
 	rate_in_gram = rate_in_ounce/31.10348
+	
 	cr = CurrencyConverter()
-
-	inr_rate_in_ounce = round(cr.convert(rate_in_ounce, 'USD', 'INR'),2)
+	# inr_rate_in_ounce = round(cr.convert(rate_in_ounce, 'USD', 'INR'),2)
 
 	usd_kt_24 = round(rate_in_gram,2)
 	inr_kt_24 = round(cr.convert(usd_kt_24, 'USD', 'INR'),2)
@@ -106,4 +106,21 @@ def get_gold_price():
 
 	current_datetime = str(end_date).split('.')[0]
 	
-	return rate_in_ounce,kt_list,inr_rate_in_ounce,current_datetime
+	return current_datetime,kt_list
+
+@frappe.whitelist()
+def set_ema_rate():
+	f_query = frappe.db.sql(
+		# f"""SELECT ema_rate,name FROM _407955e35814a6c9.`tabMRP Preset` where name = '{name}';"""
+		f"""SELECT ema_rate,name FROM _407955e35814a6c9.`tabMRP Preset` order by creation desc;"""
+	,as_dict=1)
+
+	s_query = frappe.db.sql(
+		f"""SELECT value_addition FROM _407955e35814a6c9.tabRange where parent ='{f_query[0]['name']}' and value_range like '%{f_query[0]['ema_rate']}%';"""
+	,as_dict=1)
+	rate = int(f_query[0]['ema_rate']) + int(s_query[0]['value_addition'])
+
+	cr = CurrencyConverter()
+	inr_rate_in_ounce = round(cr.convert(rate, 'USD', 'INR'),2)
+
+	return f_query[0]['name'],rate,inr_rate_in_ounce

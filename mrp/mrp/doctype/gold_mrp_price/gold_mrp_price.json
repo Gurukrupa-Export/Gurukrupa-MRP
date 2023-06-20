@@ -9,6 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "date",
+  "preset",
   "gold_rate",
   "company",
   "column_break_oxavn",
@@ -80,11 +81,17 @@
    "fieldtype": "Link",
    "label": "Metal Touch",
    "options": "Attribute Value"
+  },
+  {
+   "fieldname": "preset",
+   "fieldtype": "Link",
+   "label": "Preset ",
+   "options": "MRP Preset"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-09 12:08:42.724362",
+ "modified": "2023-06-20 11:46:57.314172",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "GOLD MRP PRICE",
