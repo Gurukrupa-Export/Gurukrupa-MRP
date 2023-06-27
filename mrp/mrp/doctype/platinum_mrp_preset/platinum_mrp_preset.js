@@ -1,6 +1,5 @@
 frappe.ui.form.on('Platinum MRP preset', {
 	onload(frm) {
-
 		frappe.call({
 			method: 'mrp.mrp.doctype.platinum_mrp_preset.platinum_mrp_preset.get_platinum_price',
 			callback: function(r) {
@@ -34,8 +33,8 @@ frappe.ui.form.on('Platinum MRP preset', {
 					var arrayLength = cur_frm.doc.number_of_range;
 					for (var i = 0; i < arrayLength; i++) {
 						let row = frm.add_child('range', {
-							range: r.message[i],
-							value_addition: cur_frm.doc.value_addition,
+							value_range: r.message[i],
+							// value_addition: cur_frm.doc.value_addition,
 						});
 					}
 					frm.refresh_field('range');

@@ -88,7 +88,7 @@ def final(number_of_range,value_range,standard_rate):
         plus_parts = []
 
         for _ in range(number_of_range):
-            part = f'{gold_rate} - {gold_rate + value_range}'
+            part = f'{gold_rate+_} - {gold_rate + value_range+_}'
             gold_rate += value_range
             plus_parts.append(part)
 

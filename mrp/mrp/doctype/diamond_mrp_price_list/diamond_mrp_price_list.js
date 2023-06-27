@@ -21,6 +21,16 @@ frappe.ui.form.on('Diamond MRP Price List Details', {
 		row.price_list_type = cur_frm.doc.price_list_type;
 		refresh_field("diamond_mrp_price_list_details");
 	},
+	// purchase_rate: function (frm, cdt, cdn) {
+	// 	var row = locals[cdt][cdn];
+	// 	row.price_list_type = cur_frm.doc.price_list_type;
+	// 	refresh_field("diamond_mrp_price_list_details");
+	// },
+	margin: function (frm, cdt, cdn) {
+		var row = locals[cdt][cdn];
+		row.rate = ((row.purchase_rate * row.margin/100)+row.purchase_rate);
+		refresh_field("diamond_mrp_price_list_details");
+	},
 });
 
 

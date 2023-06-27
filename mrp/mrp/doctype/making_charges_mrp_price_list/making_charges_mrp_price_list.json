@@ -8,20 +8,29 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "company",
-  "abbr",
-  "currency",
-  "column_break_ptxox",
-  "customer",
-  "brand",
   "date",
-  "charges_section",
+  "customer",
+  "abbr",
+  "price_list",
+  "price_list_type",
   "wastage",
-  "freight_and_other",
-  "other",
-  "column_break_9ii5t",
   "labour",
-  "mrp"
+  "column_break_ptxox",
+  "company",
+  "brand",
+  "currency",
+  "metal_type",
+  "metal_touch",
+  "metal_purity",
+  "section_break_swymx",
+  "freight_and_other",
+  "mrp",
+  "column_break_emoye",
+  "other",
+  "section_break_z6n8i",
+  "subcategory",
+  "section_break_xi9rg",
+  "finding_subcategory"
  ],
  "fields": [
   {
@@ -33,8 +42,10 @@
   {
    "fieldname": "brand",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Brand",
-   "options": "Brand"
+   "options": "Brand",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ptxox",
@@ -47,42 +58,21 @@
    "options": "Customer"
   },
   {
-   "fieldname": "charges_section",
-   "fieldtype": "Section Break",
-   "label": "Charges"
-  },
-  {
-   "description": "Wastage Charge is Calculated on %",
-   "fieldname": "wastage",
-   "fieldtype": "Float",
-   "label": "Wastage "
-  },
-  {
-   "description": "Custom and Freight Charge is Calculated on %",
+   "description": "Custom and Freight is Calculated on %",
    "fieldname": "freight_and_other",
-   "fieldtype": "Float",
+   "fieldtype": "Data",
    "label": "Custom and Freight Charges"
   },
   {
-   "description": "Other Charge is Calculated on %",
+   "description": "Other is Calculated on %",
    "fieldname": "other",
-   "fieldtype": "Float",
+   "fieldtype": "Data",
    "label": "Other"
   },
   {
-   "fieldname": "column_break_9ii5t",
-   "fieldtype": "Column Break"
-  },
-  {
-   "description": "Labour Charge is Calculated Per Gram",
-   "fieldname": "labour",
-   "fieldtype": "Float",
-   "label": "Labour"
-  },
-  {
-   "description": "MRP Charge is Calculated on %",
+   "description": "MRP is Calculated on %",
    "fieldname": "mrp",
-   "fieldtype": "Float",
+   "fieldtype": "Data",
    "label": "MRP "
   },
   {
@@ -91,6 +81,7 @@
    "label": "Date"
   },
   {
+   "fetch_from": "company.default_currency",
    "fieldname": "currency",
    "fieldtype": "Link",
    "label": "Currency",
@@ -101,11 +92,85 @@
    "fieldname": "abbr",
    "fieldtype": "Data",
    "label": "Abbr"
+  },
+  {
+   "fieldname": "metal_touch",
+   "fieldtype": "Link",
+   "label": "Metal Touch",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "metal_purity",
+   "fieldtype": "Link",
+   "label": "Metal Purity",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "metal_type",
+   "fieldtype": "Link",
+   "label": "Metal Type",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "section_break_swymx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_emoye",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.price_list_type=='Range'",
+   "fieldname": "section_break_z6n8i",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.price_list_type=='Range'",
+   "fieldname": "subcategory",
+   "fieldtype": "Table",
+   "label": "Subcategory",
+   "options": "Making Charge Price Item Subcategory"
+  },
+  {
+   "depends_on": "eval: doc.price_list_type=='Range'",
+   "fieldname": "section_break_xi9rg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.price_list_type=='Range'",
+   "fieldname": "finding_subcategory",
+   "fieldtype": "Table",
+   "label": "Finding Subcategory",
+   "options": "Making Charge Price Finding Subcategory"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "price_list_type",
+   "fieldtype": "Select",
+   "label": "Price List Type",
+   "options": "\nFixed\nRange"
+  },
+  {
+   "depends_on": "eval: doc.price_list_type=='Fixed'",
+   "fieldname": "wastage",
+   "fieldtype": "Data",
+   "label": "Wastage"
+  },
+  {
+   "depends_on": "eval: doc.price_list_type=='Fixed'",
+   "fieldname": "labour",
+   "fieldtype": "Data",
+   "label": "Labour"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-20 15:26:37.789245",
+ "modified": "2023-06-23 12:45:19.507939",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "Making Charges MRP Price List",

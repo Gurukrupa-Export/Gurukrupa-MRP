@@ -1,9 +1,8 @@
 {
  "actions": [],
  "allow_import": 1,
- "allow_rename": 1,
- "autoname": "format:SP-{#####}",
- "creation": "2023-06-20 12:13:31.332722",
+ "autoname": "format:{customer}",
+ "creation": "2023-06-22 12:36:26.391909",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -12,12 +11,12 @@
   "company",
   "customer",
   "price_list",
-  "effective_from",
   "column_break_b8dcq",
   "brand",
-  "price_list_type",
   "currency",
-  "margin"
+  "effective_from",
+  "key_table_section",
+  "mrp_key_details"
  ],
  "fields": [
   {
@@ -41,11 +40,6 @@
    "options": "Price List"
   },
   {
-   "fieldname": "effective_from",
-   "fieldtype": "Datetime",
-   "label": "Effective From"
-  },
-  {
    "fieldname": "column_break_b8dcq",
    "fieldtype": "Column Break"
   },
@@ -57,14 +51,6 @@
    "reqd": 1
   },
   {
-   "default": "Fixed",
-   "fieldname": "price_list_type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Price List Type",
-   "options": "Fixed\nWeight (in cts)"
-  },
-  {
    "fetch_from": "company.default_currency",
    "fieldname": "currency",
    "fieldtype": "Link",
@@ -72,17 +58,28 @@
    "options": "Currency"
   },
   {
-   "fieldname": "margin",
-   "fieldtype": "Percent",
-   "label": "Margin"
+   "fieldname": "effective_from",
+   "fieldtype": "Datetime",
+   "label": "Effective From"
+  },
+  {
+   "fieldname": "key_table_section",
+   "fieldtype": "Section Break",
+   "label": "Key Table"
+  },
+  {
+   "fieldname": "mrp_key_details",
+   "fieldtype": "Table",
+   "label": "MRP Key Details",
+   "options": "MRP Key Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-22 15:49:00.561948",
+ "modified": "2023-06-22 15:50:00.063213",
  "modified_by": "Administrator",
  "module": "Mrp",
- "name": "Gemstone MRP Price List",
+ "name": "MRP Key Master",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

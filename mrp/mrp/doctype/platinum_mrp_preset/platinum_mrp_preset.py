@@ -77,7 +77,7 @@ def get_platinum_price():
 	rate_in_ounce = round(df2.loc[0]['EMA'],2)
 	# rate_in_gram = rate_in_ounce/31.10348
 	current_datetime = str(end_date).split('.')[0]
-	return round(raw_rate),latest_ema_rate,current_datetime
+	return round(raw_rate),round(latest_ema_rate),current_datetime
 
 @frappe.whitelist()
 def final(number_of_range,value_range,standard_rate):
@@ -88,7 +88,7 @@ def final(number_of_range,value_range,standard_rate):
         plus_parts = []
 
         for _ in range(number_of_range):
-            part = f'{gold_rate} - {gold_rate + value_range}'
+            part = f'{gold_rate+_} - {gold_rate + value_range+_}'
             gold_rate += value_range
             plus_parts.append(part)
 
@@ -98,7 +98,7 @@ def final(number_of_range,value_range,standard_rate):
         minus_parts = []
 
         for _ in range(number_of_range):
-            part = f'{gold_rate - value_range} - {gold_rate}'
+            part = f'{gold_rate - value_range-_-1} - {gold_rate-_-1}'
             gold_rate -= value_range
             minus_parts.append(part)
 

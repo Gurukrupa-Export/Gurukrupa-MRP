@@ -16,9 +16,10 @@
   "currency",
   "rate",
   "brand",
-  "metal_touch",
+  "metal_type",
   "gold_mrp_price_section",
-  "details"
+  "details",
+  "amended_from"
  ],
  "fields": [
   {
@@ -74,24 +75,35 @@
    "fieldname": "brand",
    "fieldtype": "Link",
    "label": "Brand",
-   "options": "Brand"
-  },
-  {
-   "fieldname": "metal_touch",
-   "fieldtype": "Link",
-   "label": "Metal Touch",
-   "options": "Attribute Value"
+   "options": "Brand",
+   "reqd": 1
   },
   {
    "fieldname": "preset",
    "fieldtype": "Link",
    "label": "Preset ",
    "options": "MRP Preset"
+  },
+  {
+   "fieldname": "metal_type",
+   "fieldtype": "Link",
+   "label": "Metal Type",
+   "options": "Attribute Value"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "GOLD MRP PRICE",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-06-20 11:46:57.314172",
+ "modified": "2023-06-22 15:50:06.079266",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "GOLD MRP PRICE",

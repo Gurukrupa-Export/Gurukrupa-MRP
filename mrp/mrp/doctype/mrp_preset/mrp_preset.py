@@ -15,8 +15,6 @@ from currency_converter import CurrencyConverter
 class MRPPreset(Document):
 	pass
 
-
-
 @frappe.whitelist()
 def get_gold_price():
 	
@@ -85,16 +83,6 @@ def get_gold_price():
 
 	current_datetime = str(end_date).split('.')[0]
 	return round(raw_rate),round(latest_ema_rate),current_datetime
-
-
-# @frappe.whitelist()
-# def split(gold_rate,mrp,number_of_range):
-# 	n = int(number_of_range)
-# 	a = range(int(float(gold_rate)),int(float(mrp)))
-# 	k,m = divmod(len(a),n)
-# 	range_list = (a[i*k+min(i,m):(i+1)*k+min(i+1,m)] for i in range(n))
-# 	return range_list
-
 
 @frappe.whitelist()
 def final(number_of_range,value_range,standard_rate):

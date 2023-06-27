@@ -11,6 +11,15 @@ frappe.ui.form.on('Gemstone MRP Price List', {
 		];
 		set_filters_on_parent_table_fields(frm, parent_fields);
 	},
+	company(frm){
+		console.log(cur_frm.doc.company)
+		if(cur_frm.doc.company=='Gurukrupa Exports'){
+			frm.set_value('margin',150.000)
+		}
+		else{
+			frm.set_value('margin',200.000)
+		}
+	}
 });
 
 
