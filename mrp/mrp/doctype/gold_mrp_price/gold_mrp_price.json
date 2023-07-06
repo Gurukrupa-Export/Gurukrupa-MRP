@@ -85,6 +85,7 @@
    "options": "MRP Preset"
   },
   {
+   "default": "Gold",
    "fieldname": "metal_type",
    "fieldtype": "Link",
    "label": "Metal Type",
@@ -103,7 +104,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-22 15:50:06.079266",
+ "modified": "2023-07-05 10:15:44.619831",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "GOLD MRP PRICE",

@@ -1,5 +1,6 @@
 frappe.ui.form.on('Platinum MRP preset', {
 	onload(frm) {
+		if (cur_frm.doc.docstatus ==0){
 		frappe.call({
 			method: 'mrp.mrp.doctype.platinum_mrp_preset.platinum_mrp_preset.get_platinum_price',
 			callback: function(r) {
@@ -10,16 +11,20 @@ frappe.ui.form.on('Platinum MRP preset', {
 				}
 			}
 		});
+	}
 	},
 	number_of_range(frm) {
+		if (cur_frm.doc.docstatus ==0){
 		cur_frm.clear_table('range');
 		var arrayLength = cur_frm.doc.number_of_range;
 		for (var i = 0; i < arrayLength; i++) {
 			let row = frm.add_child('range');
 		}
 		frm.refresh_field('range');
+	}
 	},
 	value_range(frm) {
+		if (cur_frm.doc.docstatus ==0){
 		cur_frm.clear_table('range');
 		frappe.call({
 			method: 'mrp.mrp.doctype.platinum_mrp_preset.platinum_mrp_preset.final',
@@ -41,9 +46,12 @@ frappe.ui.form.on('Platinum MRP preset', {
 				}
 			}
 		});
+	}
 	},
 	value_addition(frm){
-		update_fields_in_child_table(frm, "value_addition")
+		if (cur_frm.doc.docstatus ==0){
+			update_fields_in_child_table(frm, "value_addition")
+		}
 	},
 });
 

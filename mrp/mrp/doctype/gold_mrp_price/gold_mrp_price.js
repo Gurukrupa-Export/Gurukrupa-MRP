@@ -37,7 +37,7 @@ frappe.ui.form.on('GOLD MRP PRICE', {
 					}
 				}
 			});
-			var parent_fields = [["metal_t","Metal Type"]];
+			var parent_fields = [["metal_type","Metal Type"]];
 			set_item_attribute_filters_on_fields_in_parent_doctype(frm, parent_fields);
 		}
 	},
