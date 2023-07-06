@@ -111,12 +111,12 @@ def get_gold_price():
 @frappe.whitelist()
 def set_ema_rate():
 	f_query = frappe.db.sql(
-		# f"""SELECT ema_rate,name FROM _407955e35814a6c9.`tabMRP Preset` where name = '{name}';"""
-		f"""SELECT ema_rate,name FROM _8cd4d1378679e5c5.`tabMRP Preset` order by creation desc;"""
+		# f"""SELECT ema_rate,name FROM `tabMRP Preset` where name = '{name}';"""
+		f"""SELECT ema_rate,name FROM `tabMRP Preset` order by creation desc;"""
 	,as_dict=1)
 
 	s_query = frappe.db.sql(
-		f"""SELECT value_addition FROM _8cd4d1378679e5c5.tabRange where parent ='{f_query[0]['name']}' and value_range like '%{f_query[0]['ema_rate']}%';"""
+		f"""SELECT value_addition FROM `tabRange` where parent ='{f_query[0]['name']}' and value_range like '%{f_query[0]['ema_rate']}%';"""
 	,as_dict=1)
 	rate = int(f_query[0]['ema_rate']) + int(s_query[0]['value_addition'])
 

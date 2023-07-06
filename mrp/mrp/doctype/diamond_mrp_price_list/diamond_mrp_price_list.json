@@ -9,6 +9,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "details_section",
   "company",
   "customer",
   "price_list",
@@ -17,6 +18,7 @@
   "brand",
   "price_list_type",
   "currency",
+  "margin",
   "section_break_sjuso",
   "diamond_code",
   "diamond_type",
@@ -26,7 +28,8 @@
   "diamond_grade",
   "section_break_0vlkv",
   "fixed_rate",
-  "diamond_mrp_price_list_details"
+  "diamond_mrp_price_list_details",
+  "amended_from"
  ],
  "fields": [
   {
@@ -50,6 +53,7 @@
    "label": "Diamond Code"
   },
   {
+   "default": "Real",
    "fieldname": "diamond_type",
    "fieldtype": "Link",
    "label": "Diamond Type",
@@ -57,6 +61,7 @@
    "reqd": 1
   },
   {
+   "default": "Round",
    "fieldname": "stone_shape",
    "fieldtype": "Link",
    "label": "Stone Shape",
@@ -68,8 +73,7 @@
    "fieldname": "diamond_quality",
    "fieldtype": "Link",
    "label": "Diamond Quality",
-   "options": "Attribute Value",
-   "reqd": 1
+   "options": "Attribute Value"
   },
   {
    "fieldname": "column_break_8",
@@ -83,6 +87,7 @@
    "reqd": 1
   },
   {
+   "default": "Arlo",
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "Company",
@@ -139,11 +144,31 @@
    "fieldname": "fixed_rate",
    "fieldtype": "Float",
    "label": "Fixed Rate"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "margin",
+   "fieldtype": "Percent",
+   "label": "Margin(In %)"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Diamond MRP Price List",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-06-23 14:24:23.811312",
+ "modified": "2023-07-05 14:36:07.581338",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "Diamond MRP Price List",

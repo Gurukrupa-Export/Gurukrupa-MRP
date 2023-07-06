@@ -17,7 +17,8 @@
   "brand",
   "price_list_type",
   "currency",
-  "margin"
+  "margin",
+  "amended_from"
  ],
  "fields": [
   {
@@ -74,12 +75,22 @@
   {
    "fieldname": "margin",
    "fieldtype": "Percent",
-   "label": "Margin"
+   "label": "Margin(In %)"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gemstone MRP Price List",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-06-22 15:49:00.561948",
+ "modified": "2023-07-05 14:36:28.920737",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "Gemstone MRP Price List",
