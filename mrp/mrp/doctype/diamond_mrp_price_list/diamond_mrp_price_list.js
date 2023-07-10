@@ -25,23 +25,25 @@ frappe.ui.form.on('Diamond MRP Price List', {
 
 
 frappe.ui.form.on('Diamond MRP Price List', {
-	onload(frm) {
+	price_list_type(frm) {
 		if (cur_frm.doc.docstatus == 0){
-			frappe.call({
-				method: 'mrp.mrp.doctype.diamond_mrp_price_list.diamond_mrp_price_list.get_diamond_sieve_size_range',
-				callback: function(r) {
-					if (!r.exc) {
-						var arrayLength = r.message.length;
-						for (var i = 0; i < arrayLength; i++) {
-							console.log(r.message[i][0]);
-							let row = frm.add_child('diamond_mrp_price_list_details', {
-								sieve_size_range:r.message[i][0],
-							});
+			if (cur_frm.doc.price_list_type == 'Sieve Size Range'){
+				frappe.call({
+					method: 'mrp.mrp.doctype.diamond_mrp_price_list.diamond_mrp_price_list.get_diamond_sieve_size_range',
+					callback: function(r) {
+						if (!r.exc) {
+							var arrayLength = r.message.length;
+							for (var i = 0; i < arrayLength; i++) {
+								console.log(r.message[i][0]);
+								let row = frm.add_child('diamond_mrp_price_list_details', {
+									sieve_size_range:r.message[i][0],
+								});
+							}
+							frm.refresh_field('diamond_mrp_price_list_details');
 						}
-						frm.refresh_field('diamond_mrp_price_list_details');
 					}
-				}
-			});
+				});
+			}
 		}
 	},
 });
