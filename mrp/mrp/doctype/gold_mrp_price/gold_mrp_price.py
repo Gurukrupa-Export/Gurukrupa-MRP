@@ -4,7 +4,7 @@
 import frappe
 from frappe.model.document import Document
 import requests
-import cloudscraper
+# import cloudscraper
 import json
 from datetime import datetime,timedelta
 from dateutil.relativedelta import relativedelta
