@@ -8,6 +8,8 @@ frappe.ui.form.on('Gemstone MRP Price List', {
 		['stone_size', 'Gemstone Size'],
 		['stone_quality', 'Gemstone Quality'],
 		['cut_or_cab', 'Cut Or Cab'],
+		['gemstone_pr', 'Gemstone PR'],
+		['per_pc_or_per_carat', 'Per Pc or Per Carat'],
 		];
 		set_filters_on_parent_table_fields(frm, parent_fields);
 	},

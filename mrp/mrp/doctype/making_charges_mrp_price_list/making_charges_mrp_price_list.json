@@ -24,9 +24,10 @@
   "metal_purity",
   "section_break_swymx",
   "freight_and_other",
-  "mrp",
+  "certification_charges",
   "column_break_emoye",
-  "other",
+  "additional_charges",
+  "mrp",
   "section_break_z6n8i",
   "subcategory",
   "section_break_xi9rg",
@@ -61,19 +62,13 @@
   {
    "description": "Custom and Freight is Calculated on %",
    "fieldname": "freight_and_other",
-   "fieldtype": "Data",
+   "fieldtype": "Percent",
    "label": "Custom and Freight Charges"
-  },
-  {
-   "description": "Other is Calculated on %",
-   "fieldname": "other",
-   "fieldtype": "Data",
-   "label": "Other"
   },
   {
    "description": "MRP is Calculated on %",
    "fieldname": "mrp",
-   "fieldtype": "Data",
+   "fieldtype": "Percent",
    "label": "MRP "
   },
   {
@@ -145,6 +140,7 @@
    "options": "Making Charge Price Finding Subcategory"
   },
   {
+   "fetch_from": "customer.default_price_list",
    "fieldname": "price_list",
    "fieldtype": "Link",
    "label": "Price List",
@@ -176,12 +172,24 @@
    "options": "Making Charges MRP Price List",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "description": "Certification charges is Calculated on %",
+   "fieldname": "certification_charges",
+   "fieldtype": "Percent",
+   "label": "Certification Charges"
+  },
+  {
+   "description": "Additional Charges is Calculated on %",
+   "fieldname": "additional_charges",
+   "fieldtype": "Percent",
+   "label": "Additional Charges"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-05 14:39:11.276391",
+ "modified": "2023-07-21 11:07:00.917355",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "Making Charges MRP Price List",

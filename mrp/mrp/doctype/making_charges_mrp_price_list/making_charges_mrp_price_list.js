@@ -18,6 +18,19 @@ frappe.ui.form.on('Making Charges MRP Price List', {
 		var fields2 = [['subcategory','Finding Sub-Category']];
 		set_filters_on_finding_subcategory_child_table_fields(frm,fields2);
 	},
+	customer: function(frm){
+		frappe.call({
+			method: 'mrp,',
+			args: {
+				'customer': cur_frm.doc.customer,
+			},
+			callback: function(r) {
+				if (!r.exc) {
+					// code snippet
+				}
+			}
+		});
+	}
 });
 
 

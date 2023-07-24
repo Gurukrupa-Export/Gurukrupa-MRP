@@ -16,7 +16,9 @@
   "currency",
   "effective_from",
   "key_table_section",
-  "mrp_key_details"
+  "mrp_key_details",
+  "section_break_kvsrg",
+  "mrp_discount_detail"
  ],
  "fields": [
   {
@@ -72,11 +74,22 @@
    "fieldtype": "Table",
    "label": "MRP Key Details",
    "options": "MRP Key Details"
+  },
+  {
+   "fieldname": "section_break_kvsrg",
+   "fieldtype": "Section Break",
+   "label": "Discount Detail"
+  },
+  {
+   "fieldname": "mrp_discount_detail",
+   "fieldtype": "Table",
+   "label": "MRP Discount Detail",
+   "options": "MRP Discount Detail"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-22 15:50:00.063213",
+ "modified": "2023-07-21 10:37:11.206777",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "MRP Key Master",

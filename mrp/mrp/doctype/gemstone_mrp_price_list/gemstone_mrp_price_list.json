@@ -13,11 +13,18 @@
   "customer",
   "price_list",
   "effective_from",
+  "stone_type",
+  "stone_shape",
+  "stone_size",
+  "stone_quality",
   "column_break_b8dcq",
   "brand",
   "price_list_type",
   "currency",
   "margin",
+  "cut_or_cab",
+  "gemstone_pr",
+  "per_pc_or_per_carat",
   "amended_from"
  ],
  "fields": [
@@ -25,26 +32,30 @@
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "Company",
-   "options": "Company"
+   "options": "Company",
+   "reqd": 1
   },
   {
    "fieldname": "customer",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "reqd": 1
   },
   {
    "fieldname": "price_list",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Price List",
-   "options": "Price List"
+   "options": "Price List",
+   "reqd": 1
   },
   {
    "fieldname": "effective_from",
    "fieldtype": "Datetime",
-   "label": "Effective From"
+   "label": "Effective From",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_b8dcq",
@@ -63,7 +74,8 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Price List Type",
-   "options": "Fixed\nWeight (in cts)"
+   "options": "Fixed",
+   "read_only": 1
   },
   {
    "fetch_from": "company.default_currency",
@@ -73,6 +85,7 @@
    "options": "Currency"
   },
   {
+   "description": "\u200e ",
    "fieldname": "margin",
    "fieldtype": "Percent",
    "label": "Margin(In %)"
@@ -84,13 +97,63 @@
    "no_copy": 1,
    "options": "Gemstone MRP Price List",
    "print_hide": 1,
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "stone_type",
+   "fieldtype": "Link",
+   "label": "Stone Type",
+   "options": "Attribute Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "stone_shape",
+   "fieldtype": "Link",
+   "label": "Stone Shape",
+   "options": "Attribute Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "stone_size",
+   "fieldtype": "Link",
+   "label": "Stone Size",
+   "options": "Attribute Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "per_pc_or_per_carat",
+   "fieldtype": "Link",
+   "label": "Per Pc or Per Carat",
+   "options": "Attribute Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cut_or_cab",
+   "fieldtype": "Link",
+   "label": "Cut or Cab",
+   "options": "Attribute Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "stone_quality",
+   "fieldtype": "Link",
+   "label": "Stone Quality",
+   "options": "Attribute Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gemstone_pr",
+   "fieldtype": "Link",
+   "label": "Gemstone PR",
+   "options": "Attribute Value",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-05 14:36:28.920737",
+ "modified": "2023-07-21 10:54:34.392656",
  "modified_by": "Administrator",
  "module": "Mrp",
  "name": "Gemstone MRP Price List",
